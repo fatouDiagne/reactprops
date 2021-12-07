@@ -5,6 +5,13 @@ import React, { Component } from 'react';
 class MyProfil extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            fullname : this.props.fullName,
+            bio : this.props.bio,
+            profession : this.props.profession,
+            children : this.props.children,
+            myfunction : this.props.myfunction 
+        }
 
         console.log("====>props", props);
       /*  this.state = {
@@ -14,17 +21,17 @@ class MyProfil extends Component {
     }
     render() {
         return (
-            <div>
+            <div class="container">
                 <div class="alert alert-primary" role="alert">
-                    <h1>hello { this.props.fullName}</h1>   
+                    <h1>hello { this.state.fullName}</h1>   
                
-            <h2>Votre Bio {this.props.bio} </h2>
-             <h3> profession= {this.props.profession}</h3>
+            <h2>Votre Bio {this.state.bio} </h2>
+             <h3> profession= {this.state.profession}</h3>
              </div>
-            <img src={this.props.children}/>
+            <img src={this.state.children}/>
            
             <div >
-                 <button onClick={()=> this.props.myfunction(`Bienvenu`)}>CLickMe</button>
+                 <button onClick={()=> this.state.myfunction(`Bienvenue`)}>CLickMe</button>
             </div>
             </div>
         );
