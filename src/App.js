@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import MyProfil from './profil/MyProfil';
+import './styles/App.css';
 
 function App() {
+  const myfunction = fullname => alert(fullname)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <MyProfil fullName="John" bio="Passionné par le developpement web" profession="Developpeur front-End"  myfunction={myfunction}>
+       {'http://placeimg.com/640/360/any'}
+     </MyProfil>
     </div>
   );
 }
